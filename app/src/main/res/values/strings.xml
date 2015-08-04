@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Whats For Lunch</string>
+    <string name="message">Hello world!</string>
+    <string name="choose_restaurant">Choose a Restaurant</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="restaurants">
+        <item>Monterrey</item>
+        <item>Bone Garden</item>
+        <item>Figo</item>
+        <item>Big Easy Grille</item>
+        <item>Ssam Burgers</item>
+        <item>Crazy Cuban</item>
+        <item>Star Cafe</item>
+        <item>Antico</item>
+    </string-array>
+</resources>
