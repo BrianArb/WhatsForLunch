@@ -1,6 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <!-- Thumb Up, should appear as action button  -->
+    <item android:id="@+id/action_thumb_up"
+        android:icon="@drawable/ic_action_thumb_up"
+        android:title="@string/action_thumb_up"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <!-- Auto renew,  should appear as action button -->
+    <item android:id="@+id/action_autorenew"
+        android:icon="@drawable/ic_action_autorenew"
+        android:title="@string/action_autorenew"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>

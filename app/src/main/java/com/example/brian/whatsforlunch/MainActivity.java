@@ -13,22 +13,28 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Resources res;
+    private String[] restaurants;
+    private TextView textView;
+    private String restaurant;
+
+    public MainActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Resources res = getResources();
-        final String[] restaurants = res.getStringArray(R.array.restaurants);
-        final TextView textView = (TextView)findViewById(R.id.message);
-        textView.setText("Where are we going to eat today?");
+        res = getResources();
+        restaurants = res.getStringArray(R.array.restaurants);
+        textView = (TextView)findViewById(R.id.message);
+        textView.setTextSize(24);
 
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String randomStr = restaurants[new Random().nextInt(restaurants.length)];
-                textView.setTextSize(24);
-                textView.setText("Today we eat at '" + randomStr + "'");
+                randomRestaurant();
             }
         });
 
@@ -46,14 +52,23 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_thumb_up:
+                textView.setText(String.format("You Choose '%s'", restaurant));
+                return true;
+            case R.id.action_autorenew:
+                randomRestaurant();
+                return true;
+            case R.id.action_settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
+    private void randomRestaurant() {
+        int choice = new Random().nextInt(restaurants.length);
+        restaurant = restaurants[choice];
+        textView.setText(String.format("Today we eat at '%s'", restaurant));
+    }
 }

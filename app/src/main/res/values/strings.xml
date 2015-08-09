@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Whats For Lunch</string>
-    <string name="message">Hello world!</string>
+    <string name="message">Where are we going to eat today?</string>
     <string name="choose_restaurant">Choose a Restaurant</string>
     <string name="action_settings">Settings</string>
+    <string name="action_autorenew"/>
+    <string name="action_thumb_up"/>
     <string-array name="restaurants">
         <item>Monterrey</item>
         <item>Bone Garden</item>
